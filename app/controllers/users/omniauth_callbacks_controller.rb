@@ -5,7 +5,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def failure
-    errors = { errors: "sign in failed" } 
+    errors = { errors: "sign in failed" }
     render json: errors
   end
 end

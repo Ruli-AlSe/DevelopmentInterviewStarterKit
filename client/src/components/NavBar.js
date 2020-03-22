@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const NAV_HEIGHT = 46;
 const AVATAR_HEIGHT = 40;
@@ -39,33 +40,33 @@ const Badge = styled.div`
 
 let SignInBadge = () => (
   <Badge>
-    <a href='/users/auth/salesloft' style={{textDecoration: 'none'}}><NavText>Login</NavText></a>
+    <Link to='/users/auth/salesloft' style={{textDecoration: 'none'}}><NavText>Login</NavText></Link>
   </Badge>
 );
 
 let UserBadge = ({user}) => (
   <Badge>
-    <a href='/' style={{textDecoration: 'none'}}><NavText>{user.name}</NavText></a>
+    <Link to='/' style={{textDecoration: 'none'}}><NavText>{user.name}</NavText></Link>
   </Badge>
 );
 
 let FrequencyCountBadge = () => (
   <Badge>
-    <a href='/people/freq-count' style={{textDecoration: 'none'}}><NavText>Frequency count</NavText></a>
+    <Link to='/people/freq-count' style={{textDecoration: 'none'}}><NavText>Frequency count</NavText></Link>
   </Badge>
 );
 
 let ListPeopleBadge = () => (
   <Badge>
-    <a href='/people' style={{textDecoration: 'none'}}><NavText>List people</NavText></a>
+    <Link to='/people' style={{textDecoration: 'none'}}><NavText>List people</NavText></Link>
   </Badge>
 );
 
 let NavBar = ({user}) => (
   <StyledNavBar>
     <ListPeopleBadge />
-    {user ? <UserBadge user={user} /> : <SignInBadge />}
     <FrequencyCountBadge />
+    {user ? <UserBadge user={user} /> : <SignInBadge />}
   </StyledNavBar>
 );
 

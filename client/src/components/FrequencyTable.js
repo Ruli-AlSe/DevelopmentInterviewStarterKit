@@ -1,32 +1,57 @@
 import React from 'react'
 
-let Table = ({people}) => (
+let Table = ({person}) => (
   <table>
+    <caption><strong>Email: { person.email_address }</strong></caption>
     <thead>
       <tr>
         <th>Character</th>
         <th>Count</th>
       </tr>
     </thead>
-    {people ? <TableBody people={people} /> : <tbody />}
+    {person ? <TableBody frequency={getFrequency(person.email_address)} /> : <div>No Data</div>}
   </table>
 );
 
-let TableBody = ({people}) => (
+function getFrequency(email) {
+  var freq = {};
+  for (var i=0; i<email.length; i++) {
+    var character = email.charAt(i);
+    if (freq[character]) {
+        freq[character]++;
+    } else {
+        freq[character] = 1;
+    }
+  }
+
+  return freq;
+};
+
+let TableBody = ({frequency}) => (
   <tbody>
-    {people.map(function(person, index) {
+    {Object.keys(frequency).map(function (key, index) {
       return (
-        <tr key={index}>
-          <td>{ person.email_address }</td>
-          <td>{ index+1 + '. ' }</td>
+        <tr key={ index }>
+          <td>{ key }</td>
+          <td>{ frequency[key] }</td>
         </tr>
       );
     })}
   </tbody>
 );
 
+let TableList = ({people}) => (
+  <div>
+    {people.map(function(person, index) {
+      return (
+        <Table person={person} key={index}/>
+      );
+    })}
+  </div>
+);
+
 let PeopleTable = ({people}) => (
-  <Table people={people} />
+  people ? <TableList people={people} /> : <div />
 );
 
 export default PeopleTable

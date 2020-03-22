@@ -1,0 +1,113 @@
+AllCops:
+  Exclude:
+    - db/**/**
+    - bin/**
+    - config/**/**
+
+# Don't complain about block length in tests
+Metrics/BlockLength:
+  ExcludedMethods:
+    - describe
+    - context
+    - let
+    - let!
+    - included
+    - shared_examples
+    - shared_context
+    - class_methods
+
+# Bump the max length to 100, up from 80
+Layout/LineLength:
+  Max: 100
+
+Metrics/ModuleLength:
+  Max: 150
+
+# Don't require a documentation comment of methods
+Style/Documentation:
+  Enabled: false
+
+# Require a comma on the last line of multiline hashes
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+# Require a comma on the last line of multiline arrays
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: start_of_line
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineMethodCallBraceLayout:
+  EnforcedStyle: symmetrical
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: no_space
+
+# do_stuff if !something
+Style/NegatedIf:
+  EnforcedStyle: postfix
+
+# Allow "self." in places that make sense
+Style/RedundantSelf:
+  Enabled: false
+
+# Allow "return" in places that make sense
+Style/RedundantReturn:
+  Enabled: false
+
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: empty_lines_special
+
+# Increase the method length from 10
+Metrics/MethodLength:
+  Max: 15
+  CountComments: false
+
+Bundler/OrderedGems:
+  Enabled: false
+Lint/ShadowingOuterLocalVariable:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+Layout/FirstHashElementIndentation:
+  Enabled: false
+Layout/SpaceAfterComma:
+  Enabled: false
+Lint/SuppressedException:
+  Enabled: false
+Layout/SpaceBeforeBlockBraces:
+  Enabled: false
+Style/PreferredHashMethods:
+  Enabled: false
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: false
+Style/SpecialGlobalVars:
+  Enabled: false
+Style/Lambda:
+  Enabled: false
+Layout/DotPosition:
+  Enabled: false
+Naming/PredicateName:
+  Enabled: false
+Style/Alias:
+  Enabled: false
+Style/PerlBackrefs:
+  Enabled: false
+Style/WhenThen:
+  Enabled: false
+Layout/SpaceBeforeSemicolon:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true

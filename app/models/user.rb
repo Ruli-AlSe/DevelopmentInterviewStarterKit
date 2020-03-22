@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   devise :rememberable, :trackable, :omniauthable, omniauth_providers: [:salesloft]
 
@@ -18,4 +20,5 @@ class User < ApplicationRecord
 
     user
   end
+
 end

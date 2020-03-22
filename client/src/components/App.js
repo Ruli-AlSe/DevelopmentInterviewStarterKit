@@ -5,7 +5,9 @@ import { ThemeProvider } from 'styled-components'
 
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { LandingPage } from './LandingPage'
+import { PeoplePage } from './PeoplePage'
 import { ConnectedPeople } from '../containers/ConnectedPeople'
+import { FrequencyCountPage } from './FrequencyCountPage'
 
 const theme = {
   main: {
@@ -25,7 +27,8 @@ const App = ({ store }) => (
       <Router>
         <div>
           <Route exact path="/" component={LandingPage}/>
-          <Route path="/people" component={ConnectedPeople}/>
+          <Route exact path="/people" component={PeoplePage}/>
+          <Route exact path="/people/freq-count" component={FrequencyCountPage}/>
         </div>
       </Router>
     </ThemeProvider>

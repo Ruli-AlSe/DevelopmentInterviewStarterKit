@@ -4,6 +4,9 @@ class Api::PeopleController < ApplicationController
   def people_view
   end
 
+  def freq_count_view
+  end
+
   def send_people
     page_number = params[:page_number] ? params[:page_number] : 1
     response = fetch_people(page_number)

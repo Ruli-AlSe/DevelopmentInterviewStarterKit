@@ -45,13 +45,27 @@ let SignInBadge = () => (
 
 let UserBadge = ({user}) => (
   <Badge>
-    <a href='/users/auth/logout' style={{textDecoration: 'none'}}><NavText>{user.name}</NavText></a>
+    <a href='/' style={{textDecoration: 'none'}}><NavText>{user.name}</NavText></a>
+  </Badge>
+);
+
+let FrequencyCountBadge = () => (
+  <Badge>
+    <a href='/people/freq-count' style={{textDecoration: 'none'}}><NavText>Frequency count</NavText></a>
+  </Badge>
+);
+
+let ListPeopleBadge = () => (
+  <Badge>
+    <a href='/people' style={{textDecoration: 'none'}}><NavText>List people</NavText></a>
   </Badge>
 );
 
 let NavBar = ({user}) => (
   <StyledNavBar>
+    <ListPeopleBadge />
     {user ? <UserBadge user={user} /> : <SignInBadge />}
+    <FrequencyCountBadge />
   </StyledNavBar>
 );
 

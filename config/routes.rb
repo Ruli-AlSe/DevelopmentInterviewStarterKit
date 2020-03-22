@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   get 'people', to: 'api/people#people_view'
-  get 'people/:page_number', to: 'api/people#people_view'
+  get 'people/freq-count', to: 'api/people#freq_count_view'
 
   root to: "main#index"
 end

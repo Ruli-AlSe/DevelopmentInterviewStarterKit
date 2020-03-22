@@ -1,10 +1,15 @@
-import PeoplePage from '../components/PeoplePage'
+import PeopleTable from '../components/PeopleTable'
+import FrequencyTable from '../components/FrequencyTable'
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => ({ people: state.people.people });
 
-export const ConnectedPeople = connect(
+export const ConnectedPeopleList = connect(
   mapStateToProps
-)(PeoplePage);
+)(PeopleTable);
 
-export default ConnectedPeople
+export const ConnectedPeopleFreq = connect(
+  mapStateToProps
+)(FrequencyTable);
+
+export default [ConnectedPeopleList, ConnectedPeopleFreq]

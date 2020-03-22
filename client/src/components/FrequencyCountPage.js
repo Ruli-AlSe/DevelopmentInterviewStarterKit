@@ -16,13 +16,13 @@ const FlexBox = styled.div`
   justify-content: center;
 `;
 
-const PeopleTable = ConnectedPeople[0];
+const FrequencyTable = ConnectedPeople[1];
 
-export const PeoplePage = () => (
+export const FrequencyCountPage = () => (
   <Page>
     <ConnectedNavBar />
     <FlexBox>
-      <PeopleTable />
+      <FrequencyTable />
     </FlexBox>
   </Page>
 );

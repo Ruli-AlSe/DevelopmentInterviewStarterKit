@@ -24,16 +24,22 @@ function getFrequency(email) {
     }
   }
 
-  return freq;
+  return sortFrequency(freq);
 };
+
+function sortFrequency(obj) {
+  return Object.entries(obj).sort(function (a, b) {
+    return b[1] - a[1]
+  });
+}
 
 let TableBody = ({frequency}) => (
   <tbody>
-    {Object.keys(frequency).map(function (key, index) {
+    {frequency.map(function (elem, index) {
       return (
         <tr key={ index }>
-          <td>{ key }</td>
-          <td>{ frequency[key] }</td>
+          <td>{ elem[0] }</td>
+          <td>{ elem[1] }</td>
         </tr>
       );
     })}
